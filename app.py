@@ -13,7 +13,7 @@ JSONS = ["Suhani_Bansal_Sample_1.json", "Suhani_Bansal_Sample_1.json", "Suhani_B
 IMAGE_ADDRESS = "https://biolabtests.com/wp-content/uploads/Microbial-Top-Facts-Klebsiella-pneumoniae.png"
 # Add an image
 st.image(IMAGE_ADDRESS, 
-         caption="Redshift")
+         caption="Classification")
 
 
 
