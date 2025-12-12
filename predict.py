@@ -261,21 +261,7 @@ if uploaded_file is not None:
                     
                     # Add explanation and disclaimer
                     st.divider()
-                    st.subheader("📋 Interpretation & Clinical Notes")
-                    
-                    explanation_text = f"""
-                    ### Summary
-                    
-                    The analysis of **{sample_id}** shows a consensus prediction of **{final_prediction}** based on {len(predictions)} machine learning models.
-                    
-                    #### Model Performance Notes
-                    """
-                    
-                    # Add model-specific notes
-                    #for model_name in ['Logistic Regression', 'Multi-Layer Perceptron', 'K-Nearest Neighbors']:
-                    #    metrics = MODEL_METRICS[model_name]
-                    #    explanation_text += f"\n- **{model_name}**: Accuracy = {metrics['accuracy']:.1%}, Precision = {metrics['precision']:.1%}"
-                    
+                    st.subheader("📋 Clinical Notes")
                     explanation_text += f"""
                     
                     ### ⚠️ Important Clinical Disclaimer
