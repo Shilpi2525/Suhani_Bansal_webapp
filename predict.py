@@ -26,7 +26,7 @@ def load_pickle_model(model_path: str):
 # load all three models
 logistic_regression_model = load_pickle_model("LR")
 mlp_model = load_pickle_model("MLP")
-knn_model = load_pickle_model("KNN")
+rf_model = load_pickle_model("Random Forest")
 
 # Predefined model performance metrics (you should replace these with actual metrics from your models)
 MODEL_METRICS = {
@@ -155,12 +155,12 @@ if uploaded_file is not None:
                     # Get predictions from all three models
                     lr_prediction = logistic_regression_model.predict(df)[0]
                     mlp_prediction = mlp_model.predict(df)[0]
-                    knn_prediction = knn_model.predict(df)[0]
+                    rf_prediction = rf_model.predict(df)[0]
                     
                     # Get confidence scores
                     lr_confidence = get_prediction_confidence(logistic_regression_model, df, lr_prediction)
                     mlp_confidence = get_prediction_confidence(mlp_model, df, mlp_prediction)
-                    knn_confidence = get_prediction_confidence(knn_model, df, knn_prediction)
+                    rf_confidence = get_prediction_confidence(rf_model, df, knn_prediction)
                     
                     # Create results table matching the image format
                     st.header("📊 Prediction Results Table")
