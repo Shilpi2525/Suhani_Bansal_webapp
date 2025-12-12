@@ -262,7 +262,7 @@ if uploaded_file is not None:
                     # Add explanation and disclaimer
                     st.divider()
                     st.subheader("📋 Clinical Notes")
-                    explanation_text += f"""
+                    explanation_text = f"""
                     
                     ### ⚠️ Important Clinical Disclaimer
                     
