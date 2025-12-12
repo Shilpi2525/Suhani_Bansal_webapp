@@ -8,7 +8,7 @@ from datetime import datetime
 from constants import ALL_COLUMNS
 
 # constants
-JSONS = ["Suhani_Bansal_Sample_1.json", "Suhani_Bansal_Sample_1.json", "Suhani_Bansal_Sample_1.json"]
+JSONS = ["Sample_1.json", "Sample_2.json", "Sample_3.json","Sample_4.json","Sample_5.json"]
 
 IMAGE_ADDRESS = "https://biolabtests.com/wp-content/uploads/Microbial-Top-Facts-Klebsiella-pneumoniae.png"
 # Add an image
