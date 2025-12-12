@@ -160,7 +160,7 @@ if uploaded_file is not None:
                     # Get confidence scores
                     lr_confidence = get_prediction_confidence(logistic_regression_model, df, lr_prediction)
                     mlp_confidence = get_prediction_confidence(mlp_model, df, mlp_prediction)
-                    rf_confidence = get_prediction_confidence(rf_model, df, knn_prediction)
+                    rf_confidence = get_prediction_confidence(rf_model, df, rf_prediction)
                     
                     # Create results table matching the image format
                     st.header("📊 Prediction Results Table")
@@ -198,7 +198,7 @@ if uploaded_file is not None:
                         'Recall': f"{MODEL_METRICS['K-Nearest Neighbors']['recall']:.1f}",
                         'F1-Score': f"{MODEL_METRICS['K-Nearest Neighbors']['f1_score']:.1f}",
                         'Accuracy': f"{MODEL_METRICS['K-Nearest Neighbors']['accuracy']:.1f}",
-                        'Final Outcome': get_short_prediction_label(knn_prediction)
+                        'Final Outcome': get_short_prediction_label(rf_prediction)
                     })
                     
                     results_df = pd.DataFrame(results_data)
@@ -232,7 +232,7 @@ if uploaded_file is not None:
                     st.divider()
                     st.subheader("🎯 Consensus Analysis")
                     
-                    predictions = [lr_prediction, mlp_prediction, knn_prediction]
+                    predictions = [lr_prediction, mlp_prediction, rf_prediction]
                     resistant_count = predictions.count(0)
                     susceptible_count = predictions.count(1)
                     
