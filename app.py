@@ -35,6 +35,8 @@ st.write(
         This app loads a trained classifier and predicts Ertapenem susceptibility for
         Klebsiella pneumoniae. Upload a JSON with the required feature keys
         (e.g., spectrum_bin_*).
+        Klebsiella pneumoniae is a type of Gram-negative, non-motile, rod-shaped bacterium that is part of the Enterobacteriaceae family. It is commonly found in the environment, including in soil, water, and plants, and can also be part of the normal flora in the human intestines. While it is harmless in the gut, it can cause a range of infections if it spreads to other parts of the body.Klebsiella pneumoniae is best known for causing pneumonia, particularly in hospital settings, where it is a significant cause of hospital-acquired infections. It can lead to symptoms such as fever, cough, chest pain, and difficulty breathing. 
+
         """
     )
 
