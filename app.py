@@ -29,8 +29,8 @@ def load_pickle_model(model_path: str):
 model = load_pickle_model("LR")
 
 st.title("Klebsiella pneumoniae – Ertapenem Susceptibility")
-    st.subheader("Predict Susceptible (S) or Resistant (R) from JSON features")
-    st.write(
+st.subheader("Predict Susceptible (S) or Resistant (R) from JSON features")
+st.write(
         """
         This app loads a trained classifier and predicts Ertapenem susceptibility for
         Klebsiella pneumoniae. Upload a JSON with the required feature keys
