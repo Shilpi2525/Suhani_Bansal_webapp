@@ -106,7 +106,7 @@ if uploaded_file is not None:
                      prediction_label = "Resistant (R)"
                     else:
                      prediction_label = "Susceptible (S)"
-                     st.header(f"Prediction: {prediction_label}")     
+                    st.header(f"Prediction: {prediction_label}")     
                     
         except Exception as error:
             print(str(error))
