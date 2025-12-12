@@ -26,7 +26,7 @@ def load_pickle_model(model_path: str):
 # load all three models
 logistic_regression_model = load_pickle_model("LR")
 mlp_model = load_pickle_model("MLP")
-rf_model = load_pickle_model("Random Forest")
+rf_model = load_pickle_model("RandomForest")
 
 # Predefined model performance metrics (you should replace these with actual metrics from your models)
 MODEL_METRICS = {
