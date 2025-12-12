@@ -92,7 +92,7 @@ if uploaded_file is not None:
                 st.stop()
             
             # Add prediction button 
-            if st.button("Predict S/R", type="primary"):
+            if st.button("RUN", type="primary"):
                 with st.spinner("Analyzing Spectral data..."):
                     # Placeholder for prediction logic
                     predictions = model.predict(df)
