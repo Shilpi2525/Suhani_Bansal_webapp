@@ -34,8 +34,7 @@ st.write(
         """
         This app loads a trained classifier and predicts Ertapenem susceptibility for
         Klebsiella pneumoniae. Upload a JSON with the required feature keys
-        (e.g., spectrum_bin_*). The model returns a label (S/R) and, when available,
-        class probabilities.
+        (e.g., spectrum_bin_*).
         """
     )
 
