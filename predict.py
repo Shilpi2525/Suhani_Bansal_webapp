@@ -268,28 +268,24 @@ if uploaded_file is not None:
                     
                     The analysis of **{sample_id}** shows a consensus prediction of **{final_prediction}** based on {len(predictions)} machine learning models.
                     
-                    ### Model Performance Notes
-                    """
+                    #### Model Performance Notes
+                   ### """
                     
                     # Add model-specific notes
-                    for model_name in ['Logistic Regression', 'Multi-Layer Perceptron', 'K-Nearest Neighbors']:
-                        metrics = MODEL_METRICS[model_name]
-                        explanation_text += f"\n- **{model_name}**: Accuracy = {metrics['accuracy']:.1%}, Precision = {metrics['precision']:.1%}"
+                    #for model_name in ['Logistic Regression', 'Multi-Layer Perceptron', 'K-Nearest Neighbors']:
+                    #    metrics = MODEL_METRICS[model_name]
+                    #    explanation_text += f"\n- **{model_name}**: Accuracy = {metrics['accuracy']:.1%}, Precision = {metrics['precision']:.1%}"
                     
-                    explanation_text += f"""
+                 ###   explanation_text += f"""
                     
                     ### ⚠️ Important Clinical Disclaimer
                     
                     **This tool is for research and informational purposes only.**
-                    
-                    1. **Confirmatory Testing Required:** All predictions should be confirmed through standard antimicrobial susceptibility testing (AST) in a CLIA-certified laboratory.
-                    2. **Not a Diagnostic Tool:** This prediction should not be used as the sole determinant for clinical decision-making.
-                    3. **Clinical Judgment:** Treatment decisions must be made by qualified healthcare professionals considering patient history, comorbidities, and local resistance patterns.
-                    4. **Limitations:** Machine learning models may not account for novel resistance mechanisms or rare strain variations.
-                    5. **Regulatory Status:** This software is intended for research use only and is not FDA-cleared for clinical diagnostics.
-                    
-                    **Report Generated:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
-                    
+                     
+                    1. **Not a Diagnostic Tool:** This prediction should not be used as the sole determinant for clinical decision-making.
+                    2. **Clinical Judgment:** Treatment decisions must be made by qualified healthcare professionals considering patient history, comorbidities, and local resistance patterns.
+                    3. **Regulatory Status:** This software is intended for research use only.
+                                       
                     Always consult with infectious disease specialists for treatment decisions involving antimicrobial therapy.
                     """
                     
