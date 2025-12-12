@@ -42,7 +42,7 @@ st.write(
 # Sidebar for file upload
 st.header("📤 Upload JSON Data")
 uploaded_file = st.file_uploader(
-    "Upload your galaxy data (JSON only)",
+    "Upload your spectral data (JSON only)",
     type=["json"],
     accept_multiple_files=False,
     help="Upload a JSON file containing spectral data"
