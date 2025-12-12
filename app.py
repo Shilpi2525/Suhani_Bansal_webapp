@@ -10,6 +10,14 @@ from constants import ALL_COLUMNS
 # constants
 JSONS = ["Suhani_Bansal_Sample_1.json", "Suhani_Bansal_Sample_1.json", "Suhani_Bansal_Sample_1.json"]
 
+IMAGE_ADDRESS = "https://biolabtests.com/wp-content/uploads/Microbial-Top-Facts-Klebsiella-pneumoniae.png"
+# Add an image
+st.image(IMAGE_ADDRESS, 
+         caption="Redshift")
+
+
+
+st.set_page_config(page_title="K. pneumoniae • Ertapenem S/R Predictor", page_icon="🧬", layout="wide")
 
 @st.cache_resource
 def load_pickle_model(model_path: str):
@@ -19,12 +27,6 @@ def load_pickle_model(model_path: str):
 
 # load models
 model = load_pickle_model("LR")
-#scaler_model = load_pickle_model("scaler_model")
-
-# Authentication check
-#if not st.user.is_logged_in:
-#    st.error("You must be logged in to access this page.", icon="⚠️")
-#    st.stop()
 
 st.title("Klebsiella pneumoniae – Ertapenem Susceptibility")
     st.subheader("Predict Susceptible (S) or Resistant (R) from JSON features")
@@ -94,8 +96,6 @@ if uploaded_file is not None:
             if st.button("Predict S/R", type="primary"):
                 with st.spinner("Analyzing Spectral data..."):
                     # Placeholder for prediction logic
-                    #continuous_columns = [col for col in ALL_COLUMNS if col not in CATEGORICAL_COLUMNS]
-                    #df[continuous_columns] = scaler_model.transform(df[continuous_columns])
                     predictions = model.predict(df)
                     st.header("Prediction: {}".format(predictions[0]))
                     
