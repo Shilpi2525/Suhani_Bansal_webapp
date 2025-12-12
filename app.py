@@ -98,7 +98,15 @@ if uploaded_file is not None:
                 with st.spinner("Analyzing Spectral data..."):
                     # Placeholder for prediction logic
                     predictions = model.predict(df)
-                    st.header("Prediction: {}".format(predictions[0]))
+                    prediction_value= predictions[0]
+                         
+                    #st.header("Prediction: {}".format(predictions[0]))
+                    # Map 0 → Resistant, 1 → Susceptible
+                    if prediction_value == 0:
+                     prediction_label = "Resistant (R)"
+                    else:
+                     prediction_label = "Susceptible (S)"
+                     st.header(f"Prediction: {prediction_label}")     
                     
         except Exception as error:
             print(str(error))
