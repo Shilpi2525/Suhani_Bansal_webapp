@@ -240,7 +240,7 @@ if uploaded_file is not None:
                     prediction_color = "green" if final_prediction_value == 1 else "red"
                   
                     # Display consensus result
-                    col1= st.columns(1)
+                    col1,= st.columns(1)
                     with col1:
                         st.markdown(f"<h2 style='color:{prediction_color}; text-align: center;'>{prediction_icon}</h2>", 
                                   unsafe_allow_html=True)
