@@ -239,23 +239,14 @@ if uploaded_file is not None:
                     prediction_icon = "✅" if final_prediction_value == 1 else "❌"
                     prediction_color = "green" if final_prediction_value == 1 else "red"
                   
-                    # Counts only for display
-                    susceptible_count = predictions.count(1)
-                    resistant_count = predictions.count(0)
-
                     # Display consensus result
-                    col1, col2, col3 = st.columns([1, 2, 2])
+                    col1= st.columns(1)
                     with col1:
                         st.markdown(f"<h2 style='color:{prediction_color}; text-align: center;'>{prediction_icon}</h2>", 
                                   unsafe_allow_html=True)
                         st.markdown(f"<h3 style='color:{prediction_color}; text-align: center;'>{final_prediction}</h3>", 
                                   unsafe_allow_html=True)
                     
-                    with col2:
-                        st.metric("Models Predicting Susceptible", susceptible_count)
-                    
-                    with col3:
-                        st.metric("Models Predicting Resistant", resistant_count)
                     
                     # Add explanation and disclaimer
                     st.divider()
