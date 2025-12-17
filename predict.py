@@ -4,6 +4,7 @@ import pandas as pd
 import pickle
 import numpy as np
 from datetime import datetime
+from statistics import mode
 
 from constants import ALL_COLUMNS
 
@@ -233,18 +234,15 @@ if uploaded_file is not None:
                     st.subheader("🎯 Consensus Analysis")
                     
                     predictions = [lr_prediction, mlp_prediction, rf_prediction]
-                    resistant_count = predictions.count(0)
+                    final_prediction_value=mode(predictions)
+                    final_prediction=get_prediction_label(final_prediction_value)
+                    prediction_icon = "✅" if final_prediction_value == 1 else "❌"
+                    prediction_color = "green" if final_prediction_value == 1 else "red"
+                  
+                    # Counts only for display
                     susceptible_count = predictions.count(1)
-                    
-                    if resistant_count > susceptible_count:
-                        final_prediction = "Resistant"
-                        prediction_icon = "❌"
-                        prediction_color = "red"
-                    else:
-                        final_prediction = "Susceptible (S)"
-                        prediction_icon = "✅"
-                        prediction_color = "green"
-                    
+                    resistant_count = predictions.count(0)
+
                     # Display consensus result
                     col1, col2, col3 = st.columns([1, 2, 2])
                     with col1:
