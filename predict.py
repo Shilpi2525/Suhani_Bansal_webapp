@@ -1,4 +1,4 @@
-import streamlit as st
+indent this code fully propoelry "import streamlit as st
 import json
 import pandas as pd
 import pickle
@@ -301,4 +301,4 @@ if uploaded_file is not None:
     except json.JSONDecodeError:
         st.error("❌ Invalid JSON file. Please upload a valid JSON file.", icon="⚠️")
     except Exception as error:
-        st.error(f"An error occurred: {str(error)}", icon="❌")
+        st.error(f"An error occurred: {str(error)}", icon="❌")"
