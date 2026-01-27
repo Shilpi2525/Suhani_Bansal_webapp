@@ -160,7 +160,7 @@ if uploaded_file is not None:
             
         
 
-       try:
+   try:
           df = pd.json_normalize(json_data)
 
          # Validate required features
@@ -173,7 +173,7 @@ if uploaded_file is not None:
 
          df = df[ALL_COLUMNS]
 
-      except Exception as e:
+  except Exception as e:
              st.error("❌ Failed to process uploaded JSON.", icon="⚠️")
              st.stop()
 
