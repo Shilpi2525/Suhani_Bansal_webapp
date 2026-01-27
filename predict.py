@@ -77,12 +77,32 @@ with st.sidebar:
         "Select Example Json",
         JSONS,
     )
+    
+    # Load example JSON
     with open(json_name, "r") as f:
         json_data = json.load(f)
-    # display the json if needed
+
+    # Convert to DataFrame
+    example_df = pd.json_normalize(json_data)
+
+    # Check required features exist
+    missing_columns = [col for col in ALL_COLUMNS if col not in example_df.columns]
+    if missing_columns:
+        st.error("Example JSON is missing required features.")
+        st.stop()
+
+    # Filter only required 96 features
+    example_df = example_df[ALL_COLUMNS]
+
+    # Convert back to JSON 
+    filtered_example_json = example_df.to_dict(orient="records")[0]
+
+    # Display filtered JSON
     with st.expander("Example Json"):
-        st.json(json_data)
-    json_download_data = json.dumps(json_data, indent=4)
+        st.json(filtered_example_json)
+
+    # Download filtered JSON
+    json_download_data = json.dumps(filtered_example_json, indent=4)
     st.download_button(
         label="Download Example Json",
         data=json_download_data,
