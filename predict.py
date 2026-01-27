@@ -124,7 +124,7 @@ if uploaded_file is not None:
         with st.expander("📊 View Uploaded Data"):
             st.json(json_data)
 
-        # ---- DataFrame validation ----
+        # df validation
         try:
             df = pd.json_normalize(json_data)
 
