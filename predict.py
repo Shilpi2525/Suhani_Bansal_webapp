@@ -158,17 +158,25 @@ if uploaded_file is not None:
         with st.expander("📊 View Uploaded Data"):
             st.json(json_data)
             
-        # Convert to DataFrame for better display
-        try:
-            df = pd.json_normalize(json_data)
-            columns_not_available = False
-            for col in ALL_COLUMNS:
-                if col not in df.columns:
-                    columns_not_available = True
-                    break
-            if columns_not_available:
-                st.error("❌ The uploaded JSON file does not contain all the required columns.", icon="⚠️")
-                st.stop()
+        
+
+       try:
+          df = pd.json_normalize(json_data)
+
+         # Validate required features
+         missing_columns = [col for col in ALL_COLUMNS if col not in df.columns]
+         if missing_columns:
+                 st.error("❌ The uploaded JSON file does not contain all required columns.", icon="⚠️")
+                 with st.expander("Missing Columns"):
+                     st.write(missing_columns)
+                 st.stop()
+
+         df = df[ALL_COLUMNS]
+
+      except Exception as e:
+             st.error("❌ Failed to process uploaded JSON.", icon="⚠️")
+             st.stop()
+
             
             # Add prediction button 
             if st.button("RUN PREDICTION", type="primary"):
